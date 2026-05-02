@@ -5,10 +5,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TravelGo</title>
 
-<link rel="stylesheet" href="css/style.css">
-
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #333;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+/* HERO */
+.hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+/* SLIDES */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* SECTION */
+section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f5f6fa;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 85%;
+    margin: auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* IMAGE FIX */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CARD TEXT */
+.card h3 {
+    padding: 15px;
+}
+
+/* TESTIMONIALS */
+.testimonial {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -28,15 +165,17 @@
 
 <!-- HERO SLIDER -->
 <section class="hero">
-<div class="slide active" style="background-image:url('images/bg.jpg')"></div>
-<div class="slide" style="background-image:url('images/goa.jpg')"></div>
-<div class="slide" style="background-image:url('images/dubai.jpg')"></div>
+
+<div class="slide active" style="background-image:url('images/bg.jpg'); background-position:center 50%;"></div>
+<div class="slide" style="background-image:url('images/goa.jpg');"></div>
+<div class="slide" style="background-image:url('images/dubai.jpg');"></div>
 
 <div class="hero-content">
 <h2>Explore the World</h2>
 <p>Your journey starts here</p>
 <button>Book Now</button>
 </div>
+
 </section>
 
 <!-- DESTINATIONS -->
@@ -66,7 +205,9 @@
 <script src="js/script.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>

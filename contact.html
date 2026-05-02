@@ -2,17 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contact</title>
-<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - TravelGo</title>
 
+<!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #333;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* SECTION */
+section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f8fafc;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* FORM BOX */
+form {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* INPUTS */
+form input,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* BUTTON */
+form button {
+    padding: 12px;
+    background: orange;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    background: green;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    display: none;
+    z-index: 999;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .navbar{
+        flex-direction: column;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- POPUP -->
+<div id="popup" class="popup">Message sent successfully!</div>
+
 <header>
 <nav class="navbar">
-<h1 class="logo">TravelGo</h1>
+<h1>TravelGo</h1>
+
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
@@ -20,6 +141,7 @@
 <li><a href="packages.html">Packages</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
+
 </nav>
 </header>
 
@@ -29,7 +151,7 @@
 <form id="contactForm">
 <input type="text" id="name" placeholder="Your Name">
 <input type="email" id="email" placeholder="Your Email">
-<textarea id="message" placeholder="Your Message"></textarea>
+<textarea id="message" rows="4" placeholder="Your Message"></textarea>
 <button type="submit">Send Message</button>
 </form>
 
@@ -39,8 +161,45 @@
 <p>© 2026 TravelGo</p>
 </footer>
 
-<script src="js/script.js"></script>
+<!-- JS -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if(name === "" || email === ""){
+        showPopup("Please fill all fields", "red");
+        return;
+    }
+
+    showPopup("Message sent successfully!", "green");
+    this.reset();
+});
+
+/* POPUP FUNCTION */
+function showPopup(message, color) {
+    let popup = document.getElementById("popup");
+
+    popup.innerText = message;
+    popup.style.background = color;
+    popup.style.display = "block";
+
+    setTimeout(() => {
+        popup.style.opacity = "1";
+    }, 10);
+
+    setTimeout(() => {
+        popup.style.opacity = "0";
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 500);
+    }, 3000);
+}
+</script>
+
+<!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init();</script>
 

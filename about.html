@@ -4,9 +4,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About</title>
-<link rel="stylesheet" href="css/style.css">
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #333;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+/* SECTION */
+section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f5f6fa;
+}
+
+/* CONTENT BOX */
+section div {
+    max-width: 700px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2f3640;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -25,9 +94,11 @@
 </header>
 
 <section data-aos="fade-up">
+<div>
 <h2>About Us</h2>
 <p>TravelGo provides the best travel experiences worldwide.</p>
 <p>We focus on affordable pricing and memorable journeys.</p>
+</div>
 </section>
 
 <footer>
@@ -35,7 +106,9 @@
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>

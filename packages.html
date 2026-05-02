@@ -3,9 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <title>Packages</title>
-<link rel="stylesheet" href="css/style.css">
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #333;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* SECTION */
+.packages {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f5f6fa;
+}
+
+.packages h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #2f3640;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: 85%;
+    margin: auto;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0a3d62;
+}
+
+.card p {
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -43,7 +133,9 @@
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>
